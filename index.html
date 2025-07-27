@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页</title>
+    <link href="favicon.png" rel="icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="container">
+        <div class="weather-container" id="weather-container">
+            <span class="weather-location">沙依巴克区</span>
+            <span class="weather-temp">获取中...</span>
+            <div class="weather-icon">🌤️</div>
+        </div>
+        <div class="city-select" id="city-select">
+            <input type="text" class="city-search" placeholder="搜索城市..." id="city-search">
+            <div class="city-option" data-province="新疆" data-city="乌鲁木齐" data-district="沙依巴克区">沙依巴克区</div>
+            <div class="city-option" data-province="新疆" data-city="乌鲁木齐" data-district="天山区">天山区</div>
+            <div class="city-option" data-province="新疆" data-city="乌鲁木齐" data-district="新市区">新市区</div>
+            <div class="city-option" data-province="新疆" data-city="乌鲁木齐" data-district="水磨沟区">水磨沟区</div>
+            <div class="city-option" data-province="新疆" data-city="吐鲁番市" data-district="高昌区">高昌区</div>
+            <div class="city-option" data-province="新疆" data-city="阿克苏市" data-district="阿克苏市">阿克苏市</div>
+            <div class="city-option" data-province="新疆" data-city="伊宁市" data-district="伊宁市">伊宁市</div>
+            <div class="city-option" data-province="新疆" data-city="库尔勒市" data-district="库尔勒市">库尔勒市</div>
+            <div class="city-option" data-province="新疆" data-city="石河子市" data-district="石河子市">石河子市</div>
+            <div class="city-option" data-province="新疆" data-city="奎屯市" data-district="奎屯市">奎屯市</div>
+            <div class="city-option" data-province="新疆" data-city="吐鲁番市" data-district="吐鲁番市">吐鲁番市</div>
+            <div class="city-option" data-province="新疆" data-city="和田市" data-district="和田市">和田市</div>
+            <div class="city-option" data-province="新疆" data-city="阿图什市" data-district="阿图什市">阿图什市</div>
+            <div class="city-option" data-province="新疆" data-city="博乐市" data-district="博乐市">博乐市</div>
+            <div class="city-option" data-province="新疆" data-city="五家渠市" data-district="五家渠市">五家渠市</div>
+            <div class="city-option" data-province="新疆" data-city="阿拉尔市" data-district="阿拉尔市">阿拉尔市</div>
+            <div class="city-option" data-province="新疆" data-city="图木舒克市" data-district="图木舒克市">图木舒克市</div>
+            <div class="city-option" data-province="新疆" data-city="乌苏市" data-district="乌苏市">乌苏市</div>
+            <div class="city-option" data-province="新疆" data-city="昌吉市" data-district="昌吉市">昌吉市</div>
+            <div class="city-option" data-province="新疆" data-city="阜康市" data-district="阜康市">阜康市</div>
+            <div class="city-option" data-province="新疆" data-city="克拉玛依市" data-district="克拉玛依市">克拉玛依市</div>
+            <div class="city-option" data-province="新疆" data-city="巴音郭楞" data-district="巴音郭楞">巴音郭楞</div>
+            <div class="city-option" data-province="新疆" data-city="巴楚县" data-district="巴楚县">巴楚县</div>
+        </div>
+        <div class="search-container">
+            <div class="time" id="time"></div>
+            <div class="date" id="date"></div>
+            <div class="engine-tabs">
+                <button class="engine-tab active" data-engine="baidu">百度</button>
+                <button class="engine-tab" data-engine="bing">必应</button>
+                <button class="engine-tab" data-engine="sogou">搜狗</button>
+            </div>
+            <div class="search-box">
+                <form class="search-form" action="https://www.baidu.com/s" method="get">
+                    <input type="text" name="wd" class="search-input" placeholder="输入搜索内容..." autocomplete="off">
+                    <button type="submit" class="search-btn">百度一下</button>
+                </form>
+            </div>    
+            <div class="bookmarks">
+                <div class="bookmark-list">
+                    <a href="https://jwxt.xjnu.edu.cn/jsxsd/" class="bookmark-item" data-default="true" target="_blank">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>教务系统</span>
+                    </a>
+                    <a href="https://www.educoder.net/" class="bookmark-item" data-default="true" target="_blank">
+                        <i class="fas fa-code"></i>
+                        <span>头歌实践平台</span>
+                    </a>
+                    <a href="https://www.douyin.com/" class="bookmark-item" data-default="true" target="_blank">
+                        <i class="fas fa-video"></i>
+                        <span>抖音</span>
+                    </a>
+                    <div class="add-bookmark bookmark-item">
+                        <i class="fas fa-plus"></i>
+                        <span>添加书签</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bookmark-modal glass-card">
+        <h3 class="modal-title">添加书签</h3>
+        <button class="modal-close">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="modal-body">
+            <div class="input-group">
+                <label for="bookmark-name">书签名称</label>
+                <input type="text" id="bookmark-name" placeholder="输入书签名称">
+                <span class="input-error" id="name-error"></span>
+            </div>
+            
+            <div class="input-group">
+                <label for="bookmark-url">网址</label>
+                <input type="text" id="bookmark-url" placeholder="输入网址 (例如: https://...)">
+                <span class="input-error" id="url-error"></span>
+            </div>
+            
+            <div class="input-group">
+                <div class="icon-select-header">
+                    <label>图标</label>
+                    <div class="icon-preview">
+                        <span>预览:</span>
+                        <div class="preview-item">
+                            <i class="fas fa-star"></i>
+                            <span id="preview-name">书签名称</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="icon-select">
+                    <div class="selected-icon">
+                        <i class="fas fa-star"></i>
+                        <span>点击选择图标</span>
+                    </div>
+                    <div class="icon-options">
+                        <div class="icon-option" data-icon="fa-star"><i class="fas fa-star"></i> 星标</div>
+                        <div class="icon-option" data-icon="fa-heart"><i class="fas fa-heart"></i> 心形</div>
+                        <div class="icon-option" data-icon="fa-book"><i class="fas fa-book"></i> 书籍</div>
+                        <div class="icon-option" data-icon="fa-link"><i class="fas fa-link"></i> 链接</div>
+                        <div class="icon-option" data-icon="fa-globe"><i class="fas fa-globe"></i> 地球</div>
+                        <div class="icon-option" data-icon="fa-bookmark"><i class="fas fa-bookmark"></i> 书签</div>
+                        <div class="icon-option" data-icon="fa-code"><i class="fas fa-code"></i> 代码</div>
+                        <div class="icon-option" data-icon="fa-github"><i class="fab fa-github"></i> GitHub</div>
+                        <div class="icon-option" data-icon="fa-database"><i class="fas fa-database"></i> 数据库</div>
+                        <div class="icon-option" data-icon="fa-terminal"><i class="fas fa-terminal"></i> 终端</div>
+                        <div class="icon-option" data-icon="fa-bug"><i class="fas fa-bug"></i> Debug</div>
+                        <div class="icon-option" data-icon="fa-cloud"><i class="fas fa-cloud"></i> 云服务</div>
+                        <div class="icon-option" data-icon="fa-server"><i class="fas fa-server"></i> 服务器</div>
+                        <div class="icon-option" data-icon="fa-laptop-code"><i class="fas fa-laptop-code"></i> 开发</div>
+                        <div class="icon-option" data-icon="fa-file-code"><i class="fas fa-file-code"></i> 源码</div>
+                        <div class="icon-option" data-icon="fa-markdown"><i class="fab fa-markdown"></i> Markdown</div>
+                        <div class="icon-option" data-icon="fa-video"><i class="fas fa-video"></i> 视频</div>
+                        <div class="icon-option" data-icon="fa-music"><i class="fas fa-music"></i> 音乐</div>
+                        <div class="icon-option" data-icon="fa-shopping-cart"><i class="fas fa-shopping-cart"></i> 购物</div>
+                        <div class="icon-option" data-icon="fa-image"><i class="fas fa-image"></i> 图片</div>
+                        <div class="icon-option" data-icon="fa-file"><i class="fas fa-file"></i> 文件</div>
+                        <div class="icon-option" data-icon="fa-folder"><i class="fas fa-folder"></i> 文件夹</div>
+                        <div class="icon-option" data-icon="fa-user"><i class="fas fa-user"></i> 用户</div>
+                        <div class="icon-option" data-icon="fa-cog"><i class="fas fa-cog"></i> 设置</div>
+                        <div class="icon-option" data-icon="fa-weixin"><i class="fab fa-weixin"></i> 微信</div>
+                        <div class="icon-option" data-icon="fa-qq"><i class="fab fa-qq"></i> QQ</div>
+                        <div class="icon-option" data-icon="fa-weibo"><i class="fab fa-weibo"></i> 微博</div>
+                        <div class="icon-option" data-icon="fa-bilibili"><i class="fab fa-bilibili"></i> 哔哩哔哩</div>
+                        <div class="icon-option" data-icon="fa-youtube"><i class="fab fa-youtube"></i> YouTube</div>
+                        <div class="icon-option" data-icon="fa-twitter"><i class="fab fa-twitter"></i> Twitter</div>
+                        <div class="icon-option" data-icon="fa-instagram"><i class="fab fa-instagram"></i> Instagram</div>
+                        <div class="icon-option" data-icon="fa-shopping-bag"><i class="fas fa-shopping-bag"></i> 淘宝</div>
+                        <div class="icon-option" data-icon="fa-shopping-basket"><i class="fas fa-shopping-basket"></i> 京东</div>
+                        <div class="icon-option" data-icon="fa-store"><i class="fas fa-store"></i> 商城</div>
+                        <div class="icon-option" data-icon="fa-gamepad"><i class="fas fa-gamepad"></i> 游戏</div>
+                        <div class="icon-option" data-icon="fa-film"><i class="fas fa-film"></i> 电影</div>
+                        <div class="icon-option" data-icon="fa-tv"><i class="fas fa-tv"></i> 电视</div>
+                        <div class="icon-option" data-icon="fa-headphones"><i class="fas fa-headphones"></i> 音频</div>
+                        <div class="icon-option" data-icon="fa-map-marker-alt"><i class="fas fa-map-marker-alt"></i> 地图</div>
+                        <div class="icon-option" data-icon="fa-calendar"><i class="fas fa-calendar"></i> 日历</div>
+                        <div class="icon-option" data-icon="fa-clock"><i class="fas fa-clock"></i> 时钟</div>
+                        <div class="icon-option" data-icon="fa-calculator"><i class="fas fa-calculator"></i> 计算器</div>
+                        <div class="icon-option" data-icon="fa-envelope"><i class="fas fa-envelope"></i> 邮箱</div>
+                        <div class="icon-option" data-icon="fa-comment"><i class="fas fa-comment"></i> 聊天</div>
+                        <div class="icon-option" data-icon="fa-camera"><i class="fas fa-camera"></i> 相机</div>
+                        <div class="icon-option" data-icon="fa-graduation-cap"><i class="fas fa-graduation-cap"></i> 教育</div>
+                        <div class="icon-option" data-icon="fa-book-open"><i class="fas fa-book-open"></i> 阅读</div>
+                        <div class="icon-option" data-icon="fa-language"><i class="fas fa-language"></i> 翻译</div>
+                        <div class="icon-option" data-icon="fa-pencil-alt"><i class="fas fa-pencil-alt"></i> 写作</div>
+                        <div class="icon-option" data-icon="fa-utensils"><i class="fas fa-utensils"></i> 美食</div>
+                        <div class="icon-option" data-icon="fa-plane"><i class="fas fa-plane"></i> 旅行</div>
+                        <div class="icon-option" data-icon="fa-car"><i class="fas fa-car"></i> 交通</div>
+                        <div class="icon-option" data-icon="fa-hospital"><i class="fas fa-hospital"></i> 医疗</div>
+                        <div class="icon-option" data-icon="fa-money-bill"><i class="fas fa-money-bill"></i> 金融</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button class="bookmark-modal-button cancel">取消</button>
+            <button class="bookmark-modal-button save">
+                <i class="fas fa-check"></i>
+                保存
+            </button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    <script src="anti-crawler.js"></script>
+</body>
+</html>
